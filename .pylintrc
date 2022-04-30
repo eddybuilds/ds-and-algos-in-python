@@ -1,0 +1,13 @@
+[MASTER]
+disable=
+    C0114,
+    C0115,
+    C0116,
+    E1120
+
+[FORMAT]
+good-names=
+    i,
+    j,
+    x,
+    y
