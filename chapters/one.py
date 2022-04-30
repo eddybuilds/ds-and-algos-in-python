@@ -90,7 +90,4 @@ class R0104:
 
 
 if __name__ == "__main__":
-    R0101.test_is_multiple()
-    R0102.test_is_even()
-    R0103.test_minmax()
-    R0104.test_sum_squares_less_than_n()
+    pass

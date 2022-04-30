@@ -1,0 +1,2 @@
+launch:
+	jupyter console
