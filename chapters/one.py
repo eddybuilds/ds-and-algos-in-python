@@ -1,4 +1,3 @@
-from os import stat
 from hypothesis import assume, given, settings, strategies as st
 
 
