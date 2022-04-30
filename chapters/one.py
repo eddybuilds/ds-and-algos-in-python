@@ -1,4 +1,3 @@
-from datetime import timedelta
 from hypothesis import assume, given, settings, strategies as st
 
 
@@ -34,7 +33,7 @@ class R0102:
 
     @staticmethod
     @given(x=st.integers())
-    @settings(max_examples=100, deadline=(timedelta(milliseconds=1000)))
+    @settings(max_examples=100)
     def test_is_even(x):
         assert R0102.is_even(x) == (x % 2 == 0)
 
