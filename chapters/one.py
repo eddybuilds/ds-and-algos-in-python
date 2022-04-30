@@ -1,3 +1,4 @@
+from os import stat
 from hypothesis import assume, given, settings, strategies as st
 
 
@@ -68,5 +69,24 @@ class R0103:
         assert R0103.minmax(arr) == (min(arr), max(arr))
 
 
+class R0104:
+    @staticmethod
+    def sum_squares_less_than_n(n):
+        total = 0
+
+        while n > 0:
+            total += n * n
+            n -= 1
+
+        return total
+
+    @staticmethod
+    @given(n=st.integers())
+    @settings(max_examples=100)
+    def test_sum_squares_less_than_n(n):
+        assert isinstance(R0104.sum_squares_less_than_n(n), int)
+        assert R0104.sum_squares_less_than_n(n) >= 0
+
+
 if __name__ == "__main__":
-    R0103.test_minmax()
+    R0104.test_sum_squares_less_than_n()
