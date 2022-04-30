@@ -38,5 +38,35 @@ class R0102:
         assert R0102.is_even(x) == (x % 2 == 0)
 
 
+class R0103:
+    @staticmethod
+    def minmax(arr):
+        if len(arr) == 0:
+            return (None, None)
+
+        smallest = arr[0]
+        largest = arr[0]
+
+        if (len(arr)) == 1:
+            return (smallest, largest)
+
+        for value in arr:
+            if value < smallest:
+                smallest = value
+
+            if value > largest:
+                largest = value
+
+        return (smallest, largest)
+
+    @staticmethod
+    @given(arr=st.lists(st.integers()))
+    @settings(max_examples=100)
+    def test_minmax(arr):
+        # I handle arrays of length zero, but min/max don't
+        assume(len(arr) > 1)
+        assert R0103.minmax(arr) == (min(arr), max(arr))
+
+
 if __name__ == "__main__":
-    R0102.test_is_even()
+    R0103.test_minmax()
